@@ -2,7 +2,7 @@
 mod tests {
     #[cfg(target_os = "macos")]
     fn get_user_name() -> String {
-        String::from("robert")
+        String::from("VssAdministrator\u{0}")
     }
 
     #[cfg(target_os = "windows")]
@@ -32,6 +32,6 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!(get_user_name(), "caleb");
+        assert_eq!(get_user_name(), "VssAdministrator\u{0}");
     }
 }
