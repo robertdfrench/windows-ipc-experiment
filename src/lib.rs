@@ -5,6 +5,11 @@ mod tests {
         String::from("VssAdministrator\u{0}")
     }
 
+    #[cfg(target_os = "linux")]
+    fn get_user_name() -> String {
+        String::from("VssAdministrator\u{0}")
+    }
+
     #[cfg(target_os = "windows")]
     fn get_user_name() -> String {
         extern crate advapi32;

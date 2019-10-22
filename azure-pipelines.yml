@@ -1,8 +1,17 @@
 trigger:
 - master
 
+strategy:
+  matrix:
+    mac:
+      imageName: macOS-10.13
+    linux:
+      imageName: ubuntu-16.04
+    windows:
+      imageName: windows-2019
+
 pool:
-  vmImage: 'windows-latest'
+  vmImage: $(imageName)
 
 steps:
 - script: cargo test
